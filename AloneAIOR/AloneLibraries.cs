@@ -1280,10 +1280,10 @@ namespace AloneAIOR
         public static async Task<int> CheckRunPointRaw()
         {
             Bitmap screenshot = await ImageSystem.GetScreenshotOfTalesRunner();
-            string[] colors = { "A0FF07", "EDB900", "008CB7" };
+            string[] colors = { "5AAD00", "BE9400", "0085BA"};
             foreach (string color in colors)
             {
-                (int X, int Y) result = await ImageSystem.PixelSearchArea(screenshot, 200, 674, 800, 674, color, 30);
+          (int X, int Y) result = await ImageSystem.PixelSearchArea(screenshot, 230, 675, 783, 675, color, 5);
                 if (result.X != -1)
                 {
                     int talesState = (int)(result.X);
@@ -1298,10 +1298,10 @@ namespace AloneAIOR
         public static async Task<int> CheckRunPoint()
         {
             Bitmap screenshot = await ImageSystem.GetScreenshotOfTalesRunner();
-            string[] colors = { "A0FF07", "EDB900", "008CB7" };
+            string[] colors = { "5AAD00", "BE9400", "0085BA" };
             foreach (string color in colors)
             {
-                (int X, int Y) result = await ImageSystem.PixelSearchArea(screenshot, 200, 674, 800, 674, color, 30);
+                (int X, int Y) result = await ImageSystem.PixelSearchArea(screenshot, 230, 675, 783, 675, color, 5);
                 if (result.X != -1)
                 {
                     int talesState = (int)(((result.X - 240) / 543f) * 100f);
