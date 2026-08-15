@@ -1,0 +1,7 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Update payloads and detached signatures are opaque bytes. Never subject either
+# side of the verified pair to line-ending conversion, diff drivers, or merges.
+*.exe binary
+*.sig binary

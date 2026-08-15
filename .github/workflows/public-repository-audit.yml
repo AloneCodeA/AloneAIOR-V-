@@ -1,0 +1,22 @@
+name: Public Repository Audit
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out complete history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify public repository boundary
+        shell: pwsh
+        run: ./tools/Verify-PublicRepository.ps1 -IncludeAllRefs
